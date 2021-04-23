@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="0,0,400,154">
-        <Button Content="CE" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.483,-0.845" Height="83" Width="89" FontSize="36"/>
-        <Button Content="C" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.549,-2.065" Height="83" Width="89" FontSize="36"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="104,86,0,0" VerticalAlignment="Top" Height="83" Width="89" Click="Button_Click" FontSize="36"/>
-        <Button Content="0" HorizontalAlignment="Left" Margin="104,178,0,0" VerticalAlignment="Top" Height="83" Width="89" FontSize="36"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="198,86,0,0" VerticalAlignment="Top" Height="176" Width="89" FontSize="36"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="292,87,0,0" VerticalAlignment="Top" Height="84" Width="89" FontSize="36"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,13,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" Height="56" FontSize="36"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="292,178,0,0" VerticalAlignment="Top" Height="84" Width="89" FontSize="36"/>
+        <Button Content="CE" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.483,-0.845" Height="83" Width="89" FontSize="36" Click="ClearLast"/>
+        <Button Content="C" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.549,-2.065" Height="83" Width="89" FontSize="36" Click="ClearAll"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="104,86,0,0" VerticalAlignment="Top" Height="83" Width="89" Click="EnterOne" FontSize="36"/>
+        <Button Content="0" HorizontalAlignment="Left" Margin="104,178,0,0" VerticalAlignment="Top" Height="83" Width="89" FontSize="36" Click="EnterZero"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="198,86,0,0" VerticalAlignment="Top" Height="176" Width="89" FontSize="36"  Click="Add"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="292,87,0,0" VerticalAlignment="Top" Height="84" Width="89" FontSize="36" Click="Subtract"/>
+        <TextBox Name="Input" HorizontalAlignment="Center" TextAlignment="Right" Margin="10,13,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="371" Height="56" FontSize="36"/>
+        <Button Content="=" HorizontalAlignment="Left" Margin="292,178,0,0" VerticalAlignment="Top" Height="84" Width="89" FontSize="36" Click="Perform"/>
 
     </Grid>
 </Window>

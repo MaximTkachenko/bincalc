@@ -20,13 +20,13 @@ namespace BinaryCalculator.Core.Tests
                 .EnterZero()
                 .PerformOperation();
 
-            calculator.CurrentResult.Should().Be("1011");
-            calculator.CurrentInput.Should().Be("100");
+            calculator.CurrentResult.Value.Should().Be("1011");
+            calculator.CurrentInput.Value.Should().Be("100");
             calculator.CurrentOperation.Should().Be(Calculator.Operation.Add);
 
             calculator.ClearAll();
-            calculator.CurrentResult.Should().Be("0");
-            calculator.CurrentInput.Should().Be("");
+            calculator.CurrentResult.Value.Should().Be("0");
+            calculator.CurrentInput.Value.Should().Be("0");
             calculator.CurrentOperation.Should().Be(Calculator.Operation.None);
         }
         
@@ -46,8 +46,8 @@ namespace BinaryCalculator.Core.Tests
                 .PerformOperation()
                 .PerformOperation();
 
-            calculator.CurrentResult.Should().Be("1111");
-            calculator.CurrentInput.Should().Be("100");
+            calculator.CurrentResult.Value.Should().Be("1111");
+            calculator.CurrentInput.Value.Should().Be("100");
             calculator.CurrentOperation.Should().Be(Calculator.Operation.Add);
         }
     }

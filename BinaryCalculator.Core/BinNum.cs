@@ -14,9 +14,27 @@ namespace BinaryCalculator.Core
 
         public string Value { get; private set; } = "0";
 
-        public void AppendZero() => Value = Value + "0";
+        public void AppendZero()
+        {
+            if (Value.Contains('1'))
+            {
+                Value += "0";
+            }
+        }
 
-        public void AppendOne() => Value = Value + "1";
+        public void AppendOne()
+        {
+            if (Value.Contains('1'))
+            {
+                Value += "1";
+            }
+            else
+            {
+                Value = "1";
+            }
+        }
+
+        public bool IsEmpty() => string.IsNullOrEmpty(Value);
 
         public BinNum Add(BinNum toAdd)
         {

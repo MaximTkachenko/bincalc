@@ -21,5 +21,25 @@ namespace BinaryCalculator.Core.Tests
             new BinNum("1100").Subtract(new BinNum("11")).Value.Should().Be("1001");
             new BinNum("111100001110101010").Subtract(new BinNum("11000000111111")).Value.Should().Be("111001001101101011");
         }
+
+        [Fact]
+        public void Append_Basic()
+        {
+            var bn = new BinNum();
+            bn.Value.Should().Be("0");
+            
+            bn.AppendZero();
+            bn.AppendZero();
+            bn.AppendZero();
+            bn.Value.Should().Be("0");
+
+            bn.AppendOne();
+            bn.Value.Should().Be("1");
+            
+            bn.AppendOne();
+            bn.AppendZero();
+            bn.AppendOne();
+            bn.Value.Should().Be("1101");
+        }
     }
 }
