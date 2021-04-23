@@ -14,7 +14,8 @@ namespace BinaryCalculator.Core
                 throw new ArgumentException(nameof(value));
             }
 
-            Value = value.TrimStart('0');
+            value = value.TrimStart('0');
+            if(!string.IsNullOrEmpty(value)) Value = value;
         }
 
         public string Value { get; private set; } = "0";
@@ -39,7 +40,7 @@ namespace BinaryCalculator.Core
             }
         }
 
-        public bool IsEmpty() => string.IsNullOrEmpty(Value);
+        public bool IsEmpty() => Value == "0";
 
         public BinNum Add(BinNum toAdd)
         {

@@ -14,12 +14,27 @@ namespace BinaryCalculator.Core.Tests
         }
         
         [Fact]
+        public void Add_EmptyNumbers_Ok()
+        {
+            new BinNum().Add(new BinNum()).Value.Should().Be("0");
+            new BinNum("1111").Add(new BinNum()).Value.Should().Be("1111");
+            new BinNum().Add(new BinNum("1111")).Value.Should().Be("1111");
+        }
+
+        [Fact]
         public void Subtract_Basic()
         {
             new BinNum("1111").Subtract(new BinNum("11")).Value.Should().Be("1100");
             new BinNum("1111").Subtract(new BinNum("101")).Value.Should().Be("1010");
             new BinNum("1100").Subtract(new BinNum("11")).Value.Should().Be("1001");
             new BinNum("111100001110101010").Subtract(new BinNum("11000000111111")).Value.Should().Be("111001001101101011");
+        }
+
+        [Fact]
+        public void Subtract_EmptyNumbers_Ok()
+        {
+            new BinNum("1111").Subtract(new BinNum()).Value.Should().Be("1111");
+            new BinNum().Subtract(new BinNum()).Value.Should().Be("0");
         }
 
         [Fact]
