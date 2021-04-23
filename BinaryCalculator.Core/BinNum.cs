@@ -44,6 +44,8 @@ namespace BinaryCalculator.Core
 
         public BinNum Add(BinNum toAdd)
         {
+            if (toAdd == null) throw new NullReferenceException();
+            
             var big = toAdd.Value.Length > Value.Length ? toAdd.Value : Value;
             var small = toAdd.Value.Length > Value.Length ? Value : toAdd.Value;
             var diff = big.Length - small.Length;
@@ -96,6 +98,8 @@ namespace BinaryCalculator.Core
         /// </summary>
         public BinNum Subtract(BinNum toSubtract)
         {
+            if (toSubtract == null) throw new NullReferenceException();
+
             var from = Value;
             var subtracted = toSubtract.Value;
             var diff = from.Length - subtracted.Length;
