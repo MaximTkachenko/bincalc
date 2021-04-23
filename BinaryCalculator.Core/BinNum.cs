@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace BinaryCalculator.Core
 {
@@ -8,8 +9,12 @@ namespace BinaryCalculator.Core
 
         public BinNum(string value)
         {
-            //todo validate
-            Value = value;
+            if (string.IsNullOrEmpty(value) || value.Any(x => x != '0' && x != '1'))
+            {
+                throw new ArgumentException(nameof(value));
+            }
+
+            Value = value.TrimStart('0');
         }
 
         public string Value { get; private set; } = "0";
