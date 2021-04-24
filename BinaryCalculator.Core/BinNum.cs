@@ -3,6 +3,10 @@ using System.Linq;
 
 namespace BinaryCalculator.Core
 {
+    /// <summary>
+    /// Ideally I would prefer to implement BinNum as an immutable struct like DateTime.
+    /// But I decided to stop on the current version to deliver it faster.
+    /// </summary>
     public class BinNum
     {
         public BinNum() { }
